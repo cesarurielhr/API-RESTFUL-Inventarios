@@ -1,0 +1,75 @@
+// Definición de la API
+@api = http://localhost:3020/api/v1/prod-serv
+
+### Métodos GET
+
+### Obtener todos los productos y servicios
+GET {{api}}
+
+### Obtener 1 producto o servicio
+GET {{api}}/6711e1d549d7dccd9ef33b0e
+
+### Método POST - Agregar un nuevo producto y/o servicio
+### POST ITEM PRODUCTO Y/O SERVICIO
+POST {{api}}
+Content-Type: application/json
+
+{
+  "productId": "900302",
+  "detail_row": {
+    "isActive": true,
+    "Activo": "S",
+    "Borrado": "N",
+    "detail_row_reg": [
+      {
+        "FechaReg": "2023-09-14T16:14:13.478Z",
+        "UsuarioReg": "PAPIKEN"
+      }
+    ],
+    "createdAt": "2024-10-16T19:52:22.347Z",
+    "updatedAt": "2024-10-16T19:52:22.347Z"
+  },
+  "IdInstitutoOK": "9001",
+  "IdProdServOK": "9001-000000000001",
+  "IdPresentaOK": "9001-000000000001-000000001",
+  "negocios": [
+    {
+      "IdNegocioOK": "9001-1101",
+      "ControlaSerie": "S",
+      "almacenes": [
+        {
+          "IdAlmacenOK": "ALMAKENN-1101-01",
+          "Principal": "S",
+          "CantidadActual": 37,
+          "CantidadDisponible": 30,
+          "CantidadApartada": 7,
+          "CantidadTransito": 20,
+          "CantidadMerma": 1,
+          "StockMaximo": 300,
+          "StockMinimo": 20,
+          "info_ad": [],
+          "movtos": [],
+          "series": []
+        }
+      ]
+    }
+  ],
+  "name": "Prueba POST",
+  "price": 300.00
+}
+
+### Método PUT - Actualizar un producto y/o servicio
+### PUT ITEM PRODUCTO Y/O SERVICIO
+PUT {{api}}/67119de73c6e1b966e9d876d
+Content-Type: application/json
+
+{
+  "productId": 900302,
+  "price": 1050,
+  "detail_row": {
+    "isActive": true
+  }
+}
+
+###Metodo DELETE -Eliminar un producto o servicio por su ID
+DELETE {{api}}/67119de73c6e1b966e9d876d
